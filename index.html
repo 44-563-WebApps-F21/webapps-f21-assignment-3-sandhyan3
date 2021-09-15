@@ -75,5 +75,23 @@
             <td>60</td>
         </tr>
     </table>
+    <hr size="6" noshade>
+    <h1>Depth First Search</h1>
+    <a href="https://cp-algorithms.com/graph/depth-first-search.html">Click for Depth first search</a>
+    <blockquote>Depth First Search is one of the main graph algorithms.Depth First Search finds the lexicographical first path in the graph from a source vertex u to each vertex. Depth First Search will also find the shortest paths in a tree (because there only exists one simple path), but on general graphs this is not the case.</blockquote>
+    <pre>
+        vector<vector<int>> adj; // graph represented as an adjacency list
+            int n; // number of vertices
+            
+            vector<bool> visited;
+            
+            void dfs(int v) {
+                visited[v] = true;
+                for (int u : adj[v]) {
+                    if (!visited[u])
+                        dfs(u);
+                }
+            }
+    </pre>
 </body>
 </html>
